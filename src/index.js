@@ -14,6 +14,8 @@ inputElement.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY));
 function onSearch(e) {
   const name = e.target.value.trim();
   if (!name) {
+    countriesList.innerHTML = '';
+    // countriesItem.innerHTML = '';
     return;
   } else {
     fetchCountries(name)
