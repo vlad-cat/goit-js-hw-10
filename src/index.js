@@ -53,6 +53,7 @@ function renderCountries(country) {
       .join('');
     countriesList.innerHTML = markup;
   } else {
+    countriesList.innerHTML = '';
     Notify.info('Too many matches found. Please enter a more specific name.');
   }
 }
