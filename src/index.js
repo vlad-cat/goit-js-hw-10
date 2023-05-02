@@ -15,7 +15,6 @@ function onSearch(e) {
   const name = e.target.value.trim();
   if (!name) {
     countriesList.innerHTML = '';
-    // countriesItem.innerHTML = '';
     return;
   } else {
     fetchCountries(name)
@@ -30,11 +29,11 @@ function renderCountries(country) {
   if (country.length === 1) {
     const markup = country
       .map(({ name, capital, population, flags, languages }) => {
-        return `<li>  
+        return `<li>
         <div class="country-info">
         <img src="${flags.svg}" width="25" height="20"/>
         <h2> ${name}</h2>
-        </div>       
+        </div>
           <p><b>Capital</b>: ${capital}</p>
           <p><b>Population</b>: ${population}</p>
           <p><b>Languages</b>: ${languages.map(a => a.name)} </p>
@@ -45,10 +44,10 @@ function renderCountries(country) {
   } else if (country.length >= 2 && country.length < 10) {
     const markup = country
       .map(({ name, flags }) => {
-        return `<li>  
+        return `<li>
         <div class="country-info">
         <img src="${flags.svg}" width="25" height="20"/>
-        <h2> ${name}</h2>        
+        <h2> ${name}</h2>
         </li>`;
       })
       .join('');
